@@ -17,6 +17,8 @@ install the requirements.txt
 
 get the data
 
+Initialising git and dvc
+
 - git init
 
 - dvc init
@@ -26,4 +28,13 @@ get the data
 - git add .
 
 - git commmit -m "first commit"
+
+update for README.md file
+- git add. && git commit -m "update REDME.md"
+
+- git remote add origin https://github.com/Shuaib11-Github/App.git
+
+- git branch -M main
+
+- git push origin main 
 
