@@ -1,7 +1,7 @@
 create env
 
 
--echo.> conda create -n wq python=3.7 -y
+- conda create -n wq python=3.7 -y
 
 
 activate env
@@ -13,7 +13,7 @@ created a requirements.txt file
 
 install the requirements.txt
 
-'''echo
+'''
 pip install requirements.txt
 '''
 
