@@ -1,40 +1,50 @@
 create env
 
-
-- conda create -n wq python=3.7 -y
-
+```bash
+conda create -n wq python=3.7 -y
+```
 
 activate env
-
-- conda activate wq 
-
+```bash
+conda activate wq 
+```
 
 created a requirements.txt file 
 
 install the requirements.txt
-
-- pip install requirements.txt
-
+```bash
+pip install requirements.txt
+```
 get the data
 
 Initialising git and dvc
+```bash
+git init
+```
+```bash
+dvc init
+```
+```bash
+dvc add data_given/winequality.csv
+```
+```bash
+git add .
+```
 
-- git init
-
-- dvc init
-
-- dvc add data_given/winequality.csv
-
-- git add .
-
-- git commmit -m "first commit"
-
+```bash
+git commmit -m "first commit"
+```
 update for README.md file
-- git add. && git commit -m "update REDME.md"
+```bash
+git add. && git commit -m "update REDME.md"
+```
+```bash
+git remote add origin https://github.com/Shuaib11-Github/App.git
+```
 
-- git remote add origin https://github.com/Shuaib11-Github/App.git
-
-- git branch -M main
-
-- git push origin main 
-
+```bash
+git branch -M main
+```
+```bash
+git push origin main 
+```
