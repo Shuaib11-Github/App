@@ -1,8 +1,8 @@
 create env
 
-'''echo
-conda create -n wq python=3.7 -y
-'''
+
+- [ ] conda create -n wq python=3.7 -y
+
 
 activate env
 '''echo
