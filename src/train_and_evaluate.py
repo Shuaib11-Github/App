@@ -15,11 +15,13 @@ import argparse
 import joblib
 import json
 
+
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
     mae = mean_absolute_error(actual, pred)
     r2 = r2_score(actual, pred)
     return rmse, mae, r2
+
 
 def train_and_evaluate(config_path):
     config = read_params(config_path)
@@ -43,13 +45,13 @@ def train_and_evaluate(config_path):
     test_x = test.drop(target, axis=1)
 
     lr = ElasticNet(
-        alpha=alpha, 
-        l1_ratio=l1_ratio, 
+        alpha=alpha,
+        l1_ratio=l1_ratio,
         random_state=random_state)
-    
+
     lr.fit(train_x, train_y)
     predicted_qualities = lr.predict(test_x)
-    
+
     (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
 
     print('ElasticNet model (alpha=%f, l1_ratio=%f):' % (alpha, l1_ratio))
@@ -63,15 +65,15 @@ def train_and_evaluate(config_path):
     with open(scores_file, 'w') as f:
         scores = {
             'rmse': rmse,
-            'mae' : mae,
-            'r2'  : r2
+            'mae': mae,
+            'r2': r2
         }
         json.dump(scores, f, indent=4)
 
     with open(params_file, 'w') as f:
         params = {
-            'alpha'    : alpha,
-            'l1_ratio' : l1_ratio
+            'alpha': alpha,
+            'l1_ratio': l1_ratio
         }
         json.dump(params, f, indent=4)
 
